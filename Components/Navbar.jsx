@@ -8,7 +8,9 @@ function Navbar({editor_value,setOutput}){
     async function run(){
         setButtonText("Running...")
         try{
-            const output = await axios.post('http://localhost:3000/run',
+            // const output = await axios.post('http://localhost:3000/run',
+            //                                 {code:editor_value});
+            const output = await axios.post('https://cpp-compiler-backend-1.onrender.com/run',
                                             {code:editor_value});
             setOutput(output.data.output);
         }
